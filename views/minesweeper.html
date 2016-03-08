@@ -1,0 +1,32 @@
+<div class="container">
+    <div id="wrapper">
+        <div class="row text-center">
+            <h3>Minesweeper</h3>
+        </div>
+        <div id="game">
+            <div>Flags Left: {{remainingFlags}}</div>
+            <table class="minefield">
+                <tr ng-repeat="row in minefield.rows">
+                    <td ng-repeat="spot in row.spots" ng-click="uncoverSpot(spot, $event)">
+                        <img ng-if="spot.isCovered && !spot.flag" src="img/covered.png" />
+                        <img ng-if="spot.isCovered && spot.flag" src="img/flag-mine.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 'empty'" src="img/empty.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 'mine'" src="img/mine.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 'explode'" src="img/mine-wrong.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 1" src="img/number-1.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 2" src="img/number-2.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 3" src="img/number-3.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 4" src="img/number-4.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 5" src="img/number-5.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 6" src="img/number-6.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 7" src="img/number-7.png" />
+                        <img ng-if="!spot.isCovered && spot.content == 8" src="img/number-8.png" />
+                    </td>
+                </tr>
+            </table>
+            <h3 ng-if="isWinMessageVisible">You won!</h3>
+            <h3 ng-if="isLostMessageVisible">You Lost :(</h3>
+            <a href="#/"><h3>Back to Menu</h3></a>
+        </div>
+    </div>
+</div>

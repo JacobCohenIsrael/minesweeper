@@ -1,0 +1,48 @@
+<div class="container">
+    <div id="wrapper">
+        <div class="row text-center">
+            <h3>Welcome to Minesweeper</h3>
+        </div>
+        <div id="menu">
+            <div class="row text-center">
+                <a href="#/Minesweeper" class="btn btn-primary">New Game</a>
+            </div>
+            <div class="row text-center">
+                <a href="#settingsModal" role="button" class="btn btn-primary" data-toggle="modal">Settings</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Settings Modal -->
+<div id="settingsModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="settingsModalLabel">Settings</h3>
+    </div>
+    <div class="modal-body">
+        <div class="control-group">
+            <label for="fieldWidth" class="control-label">Width</label>
+            <div  class="controls">
+                <input id="fieldWidth" type="number" ng-model="width">
+            </div>
+            <label for="fieldHeight" class="control-label">Height</label>
+            <div  class="controls">
+                <input id="fieldHeight" type="number" ng-model="height">
+            </div>
+            <label for="fieldMines" class="control-label">Mines</label>
+            <div  class="controls">
+                <input id="fieldMines" type="number" ng-model="mines">
+            </div>
+        </div>
+        <div class="alert alert-error hide" id="settingsError">
+            <span></span>
+            <a class="close" onclick="$('#settingsError').hide(500)">&times;</a>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button class="btn btn-success" ng-click="saveSettings()">Save Settings</button>
+    </div>
+</div>
